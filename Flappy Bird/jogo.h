@@ -37,7 +37,7 @@
 #define ANIMACAO_QUADRO2(x) x == 2
 #define ANIMACAO_QUADRO3(x) x == 3
 //  Texturas
-#define JOGO_TEXTURA_NUMERO 6
+#define JOGO_TEXTURA_NUMERO 7
 //  Geral
 #define GRAVIDADE 10
 
@@ -48,11 +48,12 @@ int gravidade = GRAVIDADE;
 static char *texturas_arquivos[JOGO_TEXTURA_NUMERO] = 
 {
     "imagens/passaro_sprite_1.png",
-    "imagens/passaro_sprite_2.png",
     "imagens/passaro_sprite_3.png",
+    "imagens/passaro_sprite_2.png",
     "imagens/fundo.png",
+    "sprites/base.png",
     "imagens/cano_cima.png",
-    "imagens/cano_baixo.png"
+    "imagens/cano_baixo.png",
 };
 //  SDL Jogo
 SDL_Texture *textura[JOGO_TEXTURA_NUMERO];
@@ -105,6 +106,7 @@ enum enum_textura
     personagem_textura_sprite2,
     personagem_textura_sprite3,
     fundo_textura,
+    base,
     cano_cima,
     cano_baixo
 };

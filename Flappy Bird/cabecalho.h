@@ -18,6 +18,8 @@
 #define DELAY 30
 
 /*  Variaveis */
+//  Jogo
+int loop;
 /*  SDL */
 //  Janela e tela
 SDL_Window *janela = NULL;
@@ -28,6 +30,12 @@ TTF_Font *fonte = NULL;
 SDL_Event evento;
 
 /*  Estruturas */
+enum enum_jogo
+{
+    fechar_jogo,
+    menu,
+    jogo
+};
 
 /*  Funcoes */
 

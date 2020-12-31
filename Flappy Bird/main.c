@@ -30,7 +30,6 @@ int main(int argc, char *args[])
         return 1;
     }
 
-
     //  Loop do jogo
     loop = menu;
     while(loop != fechar_jogo)

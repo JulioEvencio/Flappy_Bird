@@ -3,6 +3,7 @@
 
 //  Bibliotecas
 #include "sdl2/sdl2.h"
+#include "menu.h"
 
 /*  Constantes */
 //  Janela

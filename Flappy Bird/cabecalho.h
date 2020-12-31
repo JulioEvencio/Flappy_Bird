@@ -21,6 +21,9 @@
 /*  Variaveis */
 //  Jogo
 int loop;
+//  Mouse
+int linha_mouse;
+int coluna_mouse;
 /*  SDL */
 //  Janela e tela
 SDL_Window *janela = NULL;
@@ -39,5 +42,9 @@ enum enum_jogo
 };
 
 /*  Funcoes */
+//  Mouse
+void click_usuario(void);
+int verificar_click_local(int x, int y, int largura, int altura);
+void carregar_textura(void);
 
 #endif // CABECALHO_H_INCLUDED

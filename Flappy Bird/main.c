@@ -6,6 +6,7 @@
 #include "cabecalho.h"
 #include "sdl2/sdl2.c"
 #include "funcoes.c"
+#include "menu.c"
 
 int main(int argc, char *args[])
 {
@@ -43,13 +44,18 @@ int main(int argc, char *args[])
             {
                 loop = fechar_jogo;
             }
+            //  Verificnado se o usuario clicou
+            if(evento.type == SDL_MOUSEBUTTONDOWN)
+            {
+                click_usuario();
+            }
         }
 
         //  Verificando em qual tela o jogador esta
         switch(loop)
         {
             case(menu):
-                //  Code
+                funcao_menu();
                 break;
             case(jogo):
                 //  Code

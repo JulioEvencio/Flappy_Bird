@@ -12,12 +12,6 @@
 #define PERSONAGEM_ALTURA 30
 //  Cenario
 #define CENARIO_MOVIMENTO 10
-#define BASE_NUMERO 2
-#define BASE_X 0
-#define BASE_Y 550
-#define BASE_LARGURA JANELA_LARGURA * 2
-#define BASE_ALTURA 50
-#define BASE_CORRECAO_MOVIMENTO 10
 //  Cano
 #define CANO_NUMERO 2
 //  Cano virado para cima
@@ -37,7 +31,7 @@
 #define ANIMACAO_QUADRO2(x) x == 2
 #define ANIMACAO_QUADRO3(x) x == 3
 //  Texturas
-#define JOGO_TEXTURA_NUMERO 7
+#define JOGO_TEXTURA_NUMERO 6
 //  Geral
 #define GRAVIDADE 10
 
@@ -51,7 +45,6 @@ static char *texturas_arquivos[JOGO_TEXTURA_NUMERO] =
     "imagens/passaro_sprite_3.png",
     "imagens/passaro_sprite_2.png",
     "imagens/fundo.png",
-    "sprites/base.png",
     "imagens/cano_cima.png",
     "imagens/cano_baixo.png",
 };
@@ -80,19 +73,6 @@ struct tipo_cano
 };
 typedef struct tipo_cano Cano;
 Cano cano[CANO_NUMERO];
-//  Struct do cenario
-struct tipo_cenario
-{
-    int base[BASE_NUMERO];
-};
-typedef struct tipo_cenario Cenario;
-Cenario cenario;
-//  Enum da base
-enum enum_base
-{
-    base1_x,
-    base2_x
-};
 //  Enum do cano
 enum enum_cano
 {
@@ -106,7 +86,6 @@ enum enum_textura
     personagem_textura_sprite2,
     personagem_textura_sprite3,
     fundo_textura,
-    base,
     cano_cima,
     cano_baixo
 };

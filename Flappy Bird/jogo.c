@@ -20,9 +20,6 @@ void funcao_jogo(void)
     animar_personagem();
     //  Cano
     desenhar_cano();
-    //  Base/chao
-    sdl2_desenhar_textura(tela, textura[base], cenario.base[base1_x], BASE_Y, BASE_LARGURA, BASE_ALTURA);
-    sdl2_desenhar_textura(tela, textura[base], cenario.base[base2_x], BASE_Y, BASE_LARGURA, BASE_ALTURA);
 
     //  Atualizando tela
     sdl2_atualizar_tela(tela);
@@ -46,9 +43,6 @@ void resetar_jogo(void)
     personagem.y = PERSONAGEM_Y;
     personagem.largura = PERSONAGEM_LARGURA;
     personagem.altura = PERSONAGEM_ALTURA;
-    //  Base
-    cenario.base[base1_x] = BASE_X;
-    cenario.base[base2_x] = BASE_LARGURA;
     //  Cano
     resetar_cano();
 }
@@ -88,7 +82,7 @@ void ativar_gravidade(void)
 //  Funcao que verifica a morte do personagem
 void verificar_morte(int colisao)
 {
-    if((personagem.y + personagem.altura) > BASE_Y || colisao)
+    if((personagem.y + personagem.altura) > JANELA_ALTURA || colisao)
     {
         loop = menu;
         gravidade = GRAVIDADE;
@@ -106,24 +100,6 @@ void pular_personagem(void)
 //  Funcao responsavel pela movimentacao do cenario
 void movimentar_cenario(void)
 {
-    //  Movimentando base
-    for(int incremento = 0; incremento < BASE_NUMERO; incremento++)
-    {
-        cenario.base[incremento] -= CENARIO_MOVIMENTO;
-    }
-    //  Resetando a posicao da base quando a ela sair do cenario
-    for(int incremento = 0; incremento < BASE_NUMERO; incremento++)
-    {
-        if((cenario.base[incremento] + BASE_LARGURA) < JANELA_X)
-        {
-            cenario.base[incremento] = BASE_LARGURA - BASE_CORRECAO_MOVIMENTO;
-        }
-        if((cano[incremento].x + CANO_BAIXO_LARGURA) < JANELA_X)
-        {
-            cano[incremento].x = CANO_CIMA_X + JANELA_LARGURA;
-        }
-    }
-
     //  Movimentando cano
     for(int incremento = 0; incremento < CANO_NUMERO; incremento++)
     {

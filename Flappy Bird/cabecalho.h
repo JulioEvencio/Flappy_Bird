@@ -17,7 +17,7 @@
 #define JANELA_LARGURA 400
 #define JANELA_ALTURA 600
 //  Fonte
-#define FONTE_ARQUIVO "lazy.ttf"
+#define FONTE_ARQUIVO "arial.ttf"
 #define FONTE_TAMANHO 20
 //  Geral
 #define DELAY 30

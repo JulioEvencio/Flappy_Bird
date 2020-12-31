@@ -2,8 +2,12 @@
 #define CABECALHO_H_INCLUDED
 
 //  Bibliotecas
+#include <stdio.h>
+#include <time.h>
 #include "sdl2/sdl2.h"
+#include "sdl2/sdl2.c"
 #include "menu.h"
+#include "jogo.h"
 
 /*  Constantes */
 //  Janela

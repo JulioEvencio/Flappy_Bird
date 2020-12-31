@@ -4,12 +4,15 @@
 
 //  Bibliotecas
 #include "cabecalho.h"
-#include "sdl2/sdl2.c"
 #include "funcoes.c"
 #include "menu.c"
+#include "jogo.c"
 
-int main(int argc, char *args[])
+int main(void)
 {
+    //  Gerando semente para a funcao rand
+    srand(time(NULL));
+    
     //  Iniciando SDL, IMG e TTF
     sdl2_iniciar_SDL2();
 
@@ -30,6 +33,12 @@ int main(int argc, char *args[])
     {
         return 1;
     }
+
+    //  Carregando texturas
+    carregar_textura();
+
+    //  Resetando jogo antes de iniciar
+    resetar_jogo();
 
     //  Loop do jogo
     loop = menu;
@@ -58,7 +67,7 @@ int main(int argc, char *args[])
                 funcao_menu();
                 break;
             case(jogo):
-                //  Code
+                funcao_jogo();
                 break;
         }
 
@@ -66,8 +75,10 @@ int main(int argc, char *args[])
         SDL_Delay(DELAY);
     }
 
-
     //  Finalizando SDL, IMG e TTF
+    sdl2_fechar_fonte(fonte);
+    sdl2_fechar_tela(tela);
+    sdl2_fechar_janela(janela);
     sdl2_finalizar_SDL2();
 
     return 0;
